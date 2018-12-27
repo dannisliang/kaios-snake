@@ -21,6 +21,9 @@ function Ui(game)
             resizable: false,
             modal: true,
             autoOpen: false,
+            width: 220,
+            closeOnEscape: false,
+            dialogClass: "no-close",
             show: {
                 effect: "fade",
                 duration: 500

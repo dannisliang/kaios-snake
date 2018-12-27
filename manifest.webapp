@@ -15,5 +15,7 @@
       "description": "Простая классическая змейка"
     }
   },
-  "default_locale": "en-US"
+  "default_locale": "en-US",
+  "fullscreen": "true",
+  "orientation": [ "portrait-primary" ]
 }

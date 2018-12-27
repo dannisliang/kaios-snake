@@ -4,6 +4,10 @@ html, body {
     height: 100%;
 }
 
+#matrix {
+	border-top: 1px solid #7b7b7b;
+}
+
 #matrix > div {
     height: 10px;
     width: 10px;
@@ -99,4 +103,26 @@ html, body {
 
 .btn-container {
     margin-bottom: 10px;
+}
+
+.no-close .ui-dialog-titlebar-close {
+	display: none;
+}
+
+#new-score-modal .head{
+	text-align: center;
+}
+
+#new-score-modal .count-ajax {
+	size: 21px;
+	font-weight: bold;
+}
+
+.tools {
+	font-size: 14px;
+	height: 20px;
+}
+
+.tools .count {
+	font-weight: bold;
 }
