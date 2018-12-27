@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "name": "Simple Snake",
+  "description": "Classic snake game",
+  "launch_path": "/index.html",
+  "icons": {
+    "56": "/images/icons/ic_snake_classic_56.png"
+  },
+  "developer": {
+    "name": "Yuriy Sirotenko"
+  },
+  "locales": {
+    "ru-RU": {
+      "name": "Простая змейка",
+      "description": "Простая классическая змейка"
+    }
+  },
+  "default_locale": "en-US"
+}

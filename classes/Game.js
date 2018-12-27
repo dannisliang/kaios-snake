@@ -8,6 +8,7 @@ function Game(options)
     this.ui = {};
     this.matrix = options.matrix;
     this.speed = 200;
+    this.incrementSpeedValue = 5;
     this.timerId = '';
     this.scoreCount = 0;
 
@@ -15,10 +16,6 @@ function Game(options)
     this.modal = $('#new-score-modal');
     this.summary = $('.summary');
     this.scoresLink = $('#all-records');
-    this.tableRecords = $('.table-records');
-    this.tabsContainer = $('#tabs');
-
-    this.startBtn = $('.start');
 
     this.run = function()
     {
@@ -26,32 +23,13 @@ function Game(options)
         self.fruit = new Fruits(self);
         self.animation = new Animation(self);
         self.ui = new Ui(self);
-
-        self.startBtn.on('click', self.prepare);
-        self.scoresLink.on('click', self.ajaxGetRecords);
-
-        self.tabsContainer.tabs();
-        self.ui.trackBar();
         self.ui.modalScore();
+        
+        self.start();
     };
 
     this.prepare = function()
     {
-        var level = $('.lvl:checked').val();
-
-        switch (level) {
-            case '1':
-                self.speed = 200;
-                break;
-            case '2':
-                self.speed = 100;
-                break;
-            case '3':
-                self.speed = 50;
-                break;
-        }
-
-        $('.tools input').attr('disabled', 'disabled');
         self.start();
     };
 
@@ -77,6 +55,13 @@ function Game(options)
     {
         self.timerId = setInterval(self.snake.move, speed);
     };
+    
+    this.increaseSpeed = function()
+    {
+    	clearInterval(self.timerId);
+    	self.speed = self.speed - self.incrementSpeedValue;
+    	self.autoMove(self.speed);
+    }
 
     this.restart = function()
     {
@@ -85,47 +70,4 @@ function Game(options)
             location.reload();
         },300);
     };
-
-    this.ajaxSave = function()
-    {
-        var name = self.modal.find('#name').val();
-        $.ajax({
-            url: '/backend/scores.php',
-            type: 'post',
-            data: {score: self.scoreCount, name: name},
-            success: function(result) {
-                if ('true' == result) {
-                    self.summary.find('p').text('Рекорд успешно сохранен');
-                } else {
-                    self.summary.find('p').text('Произошла ошибка при сохранении рекорда');
-                }
-            }
-        });
-
-        self.modal.find('#name').attr('disabled', 'disabled');
-        $('.save-btn').attr('disabled', true).addClass('ui-state-disabled');
-    };
-
-    this.ajaxGetRecords = function()
-    {
-        $.ajax({
-            url: '/backend/getScores.php',
-            dataType: 'json',
-            type: 'post',
-            success: function(result) {
-                self.tableRecords.html('');
-
-                var data = JSON.parse(result);
-
-                for (var i = 0; i< data.length; i++) {
-                    self.tableRecords.prepend('<div></div>');
-                    self.tableRecords.find('div').eq(0).append('<span class="name">'+ data[i].name +'</span>');
-                    self.tableRecords.find('div').eq(0).append('<span>'+ new Array(40).join('_') +'</span>');
-                    self.tableRecords.find('div').eq(0).append('<span class="score">'+ data[i].score +'</span>');
-                }
-            }
-        });
-
-        return false;
-    }
 }

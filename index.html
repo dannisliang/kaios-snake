@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="libraries/jquery-ui.structure.min.css"/>
     <link rel="stylesheet" href="libraries/jquery-ui.theme.min.css"/>
 
-    <script language="JavaScript" src="libraries/jquery-2.1.4.min.js"></script>
-    <script language="JavaScript" src="libraries/jquery-ui.min.js"></script>
+    <script src="libraries/jquery-2.1.4.min.js"></script>
+    <script src="libraries/jquery-ui.min.js"></script>
 
-    <script language="JavaScript" src="ready.js"></script>
-    <script language="JavaScript" src="classes/Matrix.js"></script>
-    <script language="JavaScript" src="classes/Ui.js"></script>
-    <script language="JavaScript" src="classes/Game.js"></script>
-    <script language="JavaScript" src="classes/Snake.js"></script>
-    <script language="JavaScript" src="classes/Fruits.js"></script>
-    <script language="JavaScript" src="classes/Animation.js"></script>
+    <script src="ready.js"></script>
+    <script src="classes/Matrix.js"></script>
+    <script src="classes/Ui.js"></script>
+    <script src="classes/Game.js"></script>
+    <script src="classes/Snake.js"></script>
+    <script src="classes/Fruits.js"></script>
+    <script src="classes/Animation.js"></script>
 </head>
 <body>
     <div class="layout"></div>
@@ -38,50 +38,16 @@
     </div>
 
     <div class="container">
-        <div id="tabs">
-            <ul>
-                <li><a href="#tabs-1">Игра</a></li>
-                <li><a href="#tabs-2">Уровень</a></li>
-                <li><a href="#tabs-3">Рекорды</a></li>
-            </ul>
-            <div id="tabs-1">
-                <div class="tools">
-                    <div class="btn-container">
-                        <input type="button" value="Старт" class="start"/>
-                    </div>
-
-                    <div class="score">
-                        <span class="label">Фрукты:</span>
-                        <span class="count">0</span>
-                    </div>
-                </div>
-
-                <div id="matrix"></div>
-            </div>
-            <div id="tabs-2">
-                <div class="levels">
-                    <div class="track-bar"></div>
-
-                    <div class="hidden">
-                        <label for="level1"><input type="radio" id="level1" value="1" name="level" class="lvl"/>Легкий</label>
-                        <label for="level2"><input type="radio" id="level2" value="2" name="level" class="lvl" checked/>Средний</label>
-                        <label for="level3"><input type="radio" id="level3" value="3" name="level" class="lvl"/>Сложный</label>
-                    </div>
-
-                    <div class="lvl-status">
-                        <span>Средний</span>
-                    </div>
-                </div>
-            </div>
-
-            <div id="tabs-3">
-                <div class="info">
-                    <a href="#" id="all-records">Таблица рекордов</a>
-                    <a href="/points.html" id="more-records">Поиск рекордов</a>
-                    <div class="table-records"></div>
-                </div>
-            </div>
-        </div>
+	    <div id="tabs-1">
+	        <div class="tools">
+	            <div class="score">
+	                <span class="label">Фрукты:</span>
+	                <span class="count">0</span>
+	            </div>
+	        </div>
+	
+	        <div id="matrix"></div>
+	    </div>
     </div>
 
 </body>

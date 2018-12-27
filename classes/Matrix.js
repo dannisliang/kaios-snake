@@ -13,8 +13,8 @@ function Matrix(row, col)
 
     //стили для контейнера
     this.container.css({
-        'width' : this.col * 20,
-        'height' : this.row * 20
+        'width' : this.col * 10,
+        'height' : this.row * 10
     });
 
     //создание матрицы

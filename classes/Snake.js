@@ -143,6 +143,7 @@ function Snake(game, row, col)
         $('div').removeClass(game.fruit.currentClass);
         self.body.unshift(self.newBody.attr('id'));
         game.fruit.create();
+        game.increaseSpeed();
     };
 
     //возвращает номер указанного поля из id
