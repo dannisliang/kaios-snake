@@ -19,7 +19,7 @@ function Game(options)
 
     this.run = function()
     {
-        self.snake = new Snake(self, 3,5);
+        self.snake = new Snake(self, 10,5);
         self.fruit = new Fruits(self);
         self.animation = new Animation(self);
         self.ui = new Ui(self);
