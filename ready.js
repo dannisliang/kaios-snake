@@ -1,7 +1,7 @@
 //ТОЧКА ВХОДА
 
 $(document).ready(function() {
-    var matrix = new Matrix(24,32);
+    var matrix = new Matrix(32,24);
     matrix.create();
 
     var options = {

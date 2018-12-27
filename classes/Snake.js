@@ -9,10 +9,10 @@ function Snake(game, row, col)
     //id тела по умолчанию
     this.body = [(row + '-' + (col-1)), (row + '-' + (col-2))];
     this.newBody = row + '-' + col;
-    var KEY_LEFT = 37;
-    var KEY_RIGHT = 39;
-    var KEY_UP = 38;
-    var KEY_DOWN = 40;
+    var KEY_LEFT = 'ArrowLeft';
+    var KEY_RIGHT = 'ArrowRight';
+    var KEY_UP = 'ArrowUp';
+    var KEY_DOWN = 'ArrowDown';
 
     this.create = function()
     {
@@ -85,14 +85,14 @@ function Snake(game, row, col)
     this.changeDirection = function(e)
     {
         //Здесь блокирую обратный путь
-        if ((e.keyCode == KEY_RIGHT && self.direction == 'left') ||
-            (e.keyCode == KEY_LEFT && self.direction == 'right') ||
-            (e.keyCode == KEY_UP && self.direction == 'down') ||
-            (e.keyCode == KEY_DOWN && self.direction == 'up')) {
+        if ((e.key == KEY_RIGHT && self.direction == 'left') ||
+            (e.key == KEY_LEFT && self.direction == 'right') ||
+            (e.key == KEY_UP && self.direction == 'down') ||
+            (e.key == KEY_DOWN && self.direction == 'up')) {
             return false;
         }
 
-        switch (e.keyCode) {
+        switch (e.key) {
             case KEY_LEFT:
                 self.direction = 'left';
                 break;

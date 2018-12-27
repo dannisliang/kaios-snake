@@ -4,10 +4,6 @@ html, body {
     height: 100%;
 }
 
-#matrix {
-    border: 1px solid black;
-}
-
 #matrix > div {
     height: 10px;
     width: 10px;
