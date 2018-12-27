@@ -126,3 +126,12 @@ html, body {
 .tools .count {
 	font-weight: bold;
 }
+
+.ui-dialog .ui-dialog-buttonpane { 
+    text-align: center !important;
+    padding: 5px !important;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { 
+    float: none !important;
+}
